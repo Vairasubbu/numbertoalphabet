@@ -1,0 +1,53 @@
+$background: #979494;
+$keypad-bg:  #cccccc;
+$text-color: #000000;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    background: $background;
+    margin: 5px auto;
+    padding: 5px;
+    .input-field,
+    .output-field {
+        margin: 5px;
+        & input {
+            width: calc( 100% - 10px);
+            height: 22px;
+        }
+    }
+    
+
+    .keypad-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .keypad-div {
+            font-size: 24px;
+            width: 26%;
+            line-height: 28px;
+            padding: 10px 2px;
+            margin: 5px auto;
+            text-align: center;
+            vertical-align: middle;
+            background:$keypad-bg;
+            color: $text-color;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .wrapper {
+        width: 100%;
+    }   
+}
+
+@media (min-width: 640px) {
+    .wrapper {
+        width: 200px;
+        height: 300px;
+    }
+}

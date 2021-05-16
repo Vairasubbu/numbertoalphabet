@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="input-field"><input type="text" [(ngModel)]="inputField" readonly/></div>
+  <div class="output-field"><input type="text" [(ngModel)]="outputField" readonly /></div>
+  <div class="keypad-container">
+    <div class="keypad-div" (click)="onKeyPadClick(key)" *ngFor="let key of keypadValues"> {{key}}</div>
+  </div>
+</div>
+<router-outlet></router-outlet>
