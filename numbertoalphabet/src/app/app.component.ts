@@ -25,4 +25,8 @@ export class AppComponent implements OnInit {
 
     this.outputField = this.cs.convertNumberToAlphabet(this.inputField);
   }
+
+  onKeyPress(event: any) {
+    event.stopPropagation();
+  }
 }

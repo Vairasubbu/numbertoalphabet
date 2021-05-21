@@ -11,7 +11,7 @@ export class ConvertorService {
     if(input) {
       const inputArr = input.split('#');
       const outputArr = inputArr.map(element => { 
-        return ALBHABETS[parseInt(element) % 26] ? ALBHABETS[parseInt(element) % 26] : '';        
+        return element !='' && ALBHABETS[Number(element) % 26] ? ALBHABETS[Number(element) % 26] : '';        
       });
       return outputArr.join('').trim();
     } else {

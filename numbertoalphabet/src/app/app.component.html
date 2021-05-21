@@ -1,8 +1,6 @@
 <div class="wrapper">
-  <div class="input-field"><input type="text" [(ngModel)]="inputField" placeholder="Integer" readonly/></div>
-  <div class="output-field"><input type="text" [(ngModel)]="outputField" placeholder="Text" readonly /></div>
-  <div class="keypad-container">
-    <div class="keypad-div" (click)="onKeyPadClick(key)" *ngFor="let key of keypadValues"> {{key}}</div>
-  </div>
+  <div class="input-field"><input type="text" [value]="inputField" placeholder="Integer" (keypress)="onKeyPress($event)" readonly/></div>
+  <div class="output-field"><input type="text" [value]="outputField" placeholder="Text" (keypress)="onKeyPress($event)" readonly /></div>
+  <app-convertor [inputKeys]="keypadValues" (onKeyClick)="onKeyPadClick($event)"></app-convertor>
 </div>
 <router-outlet></router-outlet>
