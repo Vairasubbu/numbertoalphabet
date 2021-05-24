@@ -1,6 +1,8 @@
 <div class="wrapper">
   <div class="input-field"><input type="text" [value]="inputField" placeholder="Integer" (keypress)="onKeyPress($event)" readonly/></div>
   <div class="output-field"><input type="text" [value]="outputField" placeholder="Text" (keypress)="onKeyPress($event)" readonly /></div>
+  <div class="label-heading" *ngIf="inputField!='' && outputField !=''">Numeric Input => Text Output </div>
+  <div class="label-values" *ngIf="inputField!='' && outputField !=''">{{inputField}} => {{outputField}}</div>
   <app-convertor [inputKeys]="keypadValues" (onKeyClick)="onKeyPadClick($event)"></app-convertor>
 </div>
 <router-outlet></router-outlet>

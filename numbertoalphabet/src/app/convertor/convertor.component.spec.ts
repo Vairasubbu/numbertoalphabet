@@ -23,4 +23,11 @@ describe('ConvertorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should validate inputkeys', () => {
+    component.inputKeys = KEYPAD_VALUES;
+    fixture.detectChanges();
+    keypadContainer = fixture.nativeElement.querySelector('div.keypad-container');
+    expect(keypadContainer.children.length).toEqual(12);
+  });
 });
